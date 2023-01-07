@@ -13,8 +13,15 @@
  * @package           local1857
  */
 
-function local1857_local1857_news_block_block_init() {
-	register_block_type( __DIR__ . '/build/core-block' );
-	register_block_type( __DIR__ . '/build/overall-block' );
+
+
+ function local1857_local1857_news_block_block_init() {
+	register_block_type( __DIR__ . '/build/core-block', [
+	]
+	 );
+	// Renders the overall block that contains headings AND the News Core block
+	wp_register_script('local1857-recent-news-block', plugins_url('build/overall-block/index.js', __FILE__), array('wp-blocks', 'wp-element', 'wp-editor'));
+	register_block_type( __DIR__ . '/build/overall-block/');
 }
+
 add_action( 'init', 'local1857_local1857_news_block_block_init' );

@@ -1,3 +1,86 @@
-.wp-block-local1857-local1857-news-block {
-	border: 1px dotted #f00;
+@import "colors";
+
+.kcls-recent-news-block {
+	width: 100%;
+}
+
+.kcls-voice-editor-news-container {
+	position: relative;
+	display: grid;
+	max-width: 840px;
+	margin: auto;
+	grid-template-columns: 25% 25% 25% 25%;
+	grid-template-rows: 1fr 1fr;
+	grid-template-areas:
+		"main main side-1 side-2"
+		"main main side-3 side-4";
+
+	p {
+		font-size: 0.75rem;
+	}
+}
+
+.kcls-editor-news-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	h3 {
+		color: white;
+		font-size: 1.5rem;
+		text-align: center;
+	}
+}
+
+.kcls-voice-editor-news-main {
+	grid-area: main;
+}
+
+.kcls-recent-news-editor-heading {
+	font-size: 1rem;
+}
+
+.kcls-read-blog-button {
+	display: flex;
+	align-items: center;
+	text-align: center;
+	padding: 1rem;
+	border-radius: 10px;
+	color: #fff;
+	background-color: $kcls-green;
+	font-size: 0.75rem;
+
+	// TODO: Figure out why this needs important to work
+	div {
+		background-color: transparent !important;
+	}
+}
+
+.kcls-voice-editor-news {
+	border: solid 1px gray;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 0 1rem;
+	text-align: center;
+	a {
+		color: red;
+	}
+}
+
+.kcls-section-title > div {
+	display: flex;
+	justify-content: left;
+	margin: 1rem 2rem;
+	padding: 0 2rem 0.75rem 0;
+	color: $kcls-blue;
+	font-weight: bold;
+	font-size: 1.5rem;
+	border-bottom: solid 1px $kcls-green;
 }
