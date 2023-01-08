@@ -4,7 +4,7 @@
  * Description:       Block that displays the last five news posts
  * Requires at least: 6.1
  * Requires PHP:      7.0
- * Version:           0.1.0
+ * Version:           0.9.0
  * Author:            Two Dogs Web Development
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
@@ -16,9 +16,7 @@
 
 
  function local1857_local1857_news_block_block_init() {
-	register_block_type( __DIR__ . '/build/core-block', [
-	]
-	 );
+	register_block_type( __DIR__ . '/build/core-block');
 	// Renders the overall block that contains headings AND the News Core block
 	wp_register_script('local1857-recent-news-block', plugins_url('build/overall-block/index.js', __FILE__), array('wp-blocks', 'wp-element', 'wp-editor'));
 	register_block_type( __DIR__ . '/build/overall-block/');
