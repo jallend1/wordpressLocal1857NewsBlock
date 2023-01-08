@@ -35,10 +35,10 @@ function KCLSNewsBlock() {
     content: "Latest News",
     className: "kcls-heading"
   }], ["core/button", {
-    text: "See All News",
+    text: "See News",
     className: "kcls-read-blog-button",
     url: "/news/"
-  }]]], ["kcls/news-core", {
+  }]]], ["local1857/local1857-core-news-block", {
     content: "This is a placeholder for the Local 1857 News Block."
   }]]]];
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps)(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.InnerBlocks, (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps)(), {

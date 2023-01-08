@@ -19,7 +19,7 @@ export default function KCLSNewsBlock() {
 						[
 							"core/button",
 							{
-								text: "See All News",
+								text: "See News",
 								className: "kcls-read-blog-button",
 								url: "/news/",
 							},
@@ -27,7 +27,7 @@ export default function KCLSNewsBlock() {
 					],
 				],
 				[
-					"kcls/news-core",
+					"local1857/local1857-core-news-block",
 					{ content: "This is a placeholder for the Local 1857 News Block." },
 				],
 			],

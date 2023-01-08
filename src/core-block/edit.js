@@ -1,41 +1,49 @@
 import { __ } from "@wordpress/i18n";
+import { useSelect } from "@wordpress/data";
 import "./editor.scss";
-import { useBlockProps, InnerBlocks } from "@wordpress/block-editor";
 
 export default function Edit() {
-	const Local1857NewsBlockBlocks = [
-		[
-			"core/group",
-			{ className: "kcls-news kcls-section" },
-			[
-				[
-					"core/group",
-					{ className: "kcls-section-title" },
-					[
-						[
-							"core/heading",
-							{ level: 2, content: "Latest News", className: "kcls-heading" },
-						],
-						[
-							"core/button",
-							{
-								text: "See All News",
-								className: "kcls-read-blog-button",
-								url: "/news/",
-							},
-						],
-					],
-				],
-				[
-					"kcls/news-core",
-					{ content: "This is a placeholder for the Local 1857 News Block." },
-				],
-			],
-		],
-	];
+	const posts = useSelect((select) => {
+		return select("core").getEntityRecords("postType", "post");
+	}, []);
+
 	return (
-		<div {...useBlockProps()}>
-			<InnerBlocks {...useBlockProps()} template={Local1857NewsBlockBlocks} />
+		<div className="kcls-recent-news-block">
+			<div className="kcls-voice-editor-news-container">
+				{!posts && "Loading"}
+				{posts && posts.length === 0 && "No Posts"}
+				{/* Slices the latest five blog entries and renders them into the editor */}
+				{posts && posts.length > 0
+					? posts.slice(0, 5).map((post, index) => {
+							return (
+								<div
+									class={
+										index === 0
+											? "kcls-voice-editor-news kcls-voice-editor-news-main"
+											: "kcls-voice-editor-news"
+									}
+								>
+									<h3 className="kcls-recent-news-editor-heading">
+										{post.title.rendered}
+									</h3>
+									{index === 0 && (
+										<p>
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+											sed do eiusmod tempor incididunt ut labore et dolore magna
+											aliqua.
+										</p>
+									)}
+								</div>
+							);
+					  })
+					: null}
+				<div className="kcls-editor-news-overlay">
+					<h3>
+						This automatically pulls the most recent five posts, and is not
+						editable.
+					</h3>
+				</div>
+			</div>
 		</div>
 	);
 }
