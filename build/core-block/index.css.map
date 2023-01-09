@@ -1,1 +1,0 @@
-{"version":3,"file":"core-block/index.css","mappings":";;;AAAA;EACC;AACD,C","sources":["webpack://local1857-news-block/./src/core-block/editor.scss"],"sourcesContent":[".wp-block-local1857-local1857-news-block {\n\tborder: 1px dotted #f00;\n}\n"],"names":[],"sourceRoot":""}
